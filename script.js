@@ -21,8 +21,6 @@ function getRandomNumber() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    console.log(`Computer choice: ${computerSelection} `)
-
     if (playerSelection === computerSelection) {
         return "draw";
     }
@@ -46,10 +44,7 @@ function game() {
     for (let i = 0; i < 5; i++) {
         const computerSelection = getComputerChoice();
         const playerSelection = prompt("Rock? Paper? Scissors?").toLowerCase();
-        console.log(playRound(playerSelection, computerSelection));
-        console.log(`
-        Player wins: ${playerWins}
-        Computer wins: ${computerWins}`)
+        console.log(`Round ${i+1}: ` + playRound(playerSelection, computerSelection) + ` (${playerSelection} vs. ${computerSelection})`);
     }
 
     if (playerWins > computerWins) {
@@ -65,4 +60,4 @@ function game() {
     }
 }
 
-console.log(game());
+console.log(game() + ` | Final score: ${playerWins}-${computerWins}`);
