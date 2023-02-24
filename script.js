@@ -21,21 +21,21 @@ function playRound(playerSelection, computerSelection) {
     console.log(`Computer choice: ${computerSelection} `)
 
     if (playerSelection === computerSelection) {
-        console.log("Oh it's a draw!");
+        return "draw";
     }
 
     else if ((playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "scissors" && computerSelection === "paper") ||
         (playerSelection === "paper" && computerSelection === "rock")) {
-        console.log(`You win, ${playerSelection} beats ${computerSelection}`);
+        return "win";
     }
 
     else {
-        console.log(`You lose, ${computerSelection} beats ${playerSelection}`);
+        return "lose"
     }
 }
 
 const computerSelection = getComputerChoice();
 const playerSelection = "scissors"
 
-playRound(playerSelection, computerSelection);
+console.log(playRound(playerSelection, computerSelection));
