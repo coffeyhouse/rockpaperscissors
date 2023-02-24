@@ -1,3 +1,6 @@
+let playerWins = 0;
+let computerWins = 0;
+
 function getComputerChoice() {
     let randomNumber = getRandomNumber();
 
@@ -27,10 +30,12 @@ function playRound(playerSelection, computerSelection) {
     else if ((playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "scissors" && computerSelection === "paper") ||
         (playerSelection === "paper" && computerSelection === "rock")) {
+        playerWins++;
         return "win";
     }
 
     else {
+        computerWins++;
         return "lose"
     }
 }
@@ -42,7 +47,22 @@ function game() {
         const computerSelection = getComputerChoice();
         const playerSelection = prompt("Rock? Paper? Scissors?").toLowerCase();
         console.log(playRound(playerSelection, computerSelection));
+        console.log(`
+        Player wins: ${playerWins}
+        Computer wins: ${computerWins}`)
+    }
+
+    if (playerWins > computerWins) {
+        return "Winner!"
+    }
+
+    else if (playerWins === computerWins) {
+        return "Draw!"
+    }
+
+    else {
+        return "Loser!"
     }
 }
 
-game();
+console.log(game());
