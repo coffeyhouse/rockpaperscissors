@@ -81,21 +81,28 @@ function checkWinner() {
 }
 
 function createButtons() {
+    const btnContainer = document.createElement("div");
+    btnContainer.setAttribute("id", "btn-container");
+
     const rockBtn = document.createElement("button");
     rockBtn.textContent = "Rock";
     rockBtn.value = "rock";
+    rockBtn.setAttribute("id", "btn-rock");
 
     const paperBtn = document.createElement("button");
     paperBtn.textContent = "Paper";
     paperBtn.value = "paper";
+    paperBtn.setAttribute("id", "btn-paper");
 
     const scissorsBtn = document.createElement("button");
     scissorsBtn.textContent = "Scissors";
     scissorsBtn.value = "scissors";
+    scissorsBtn.setAttribute("id", "btn-scissors");
 
-    container.appendChild(rockBtn);
-    container.appendChild(paperBtn);
-    container.appendChild(scissorsBtn);
+    btnContainer.appendChild(rockBtn);
+    btnContainer.appendChild(paperBtn);
+    btnContainer.appendChild(scissorsBtn);
+    container.appendChild(btnContainer);
 
     const buttons = document.querySelectorAll("button");
 
