@@ -117,8 +117,28 @@ function createButtons() {
 }
 
 function setUpGame() {
+    createPage();
     createButtons();
     createResultsDiv();
+}
+
+function createPage() {
+    const hero = document.createElement("div");
+    hero.setAttribute("id", "header");
+
+    const header = document.createElement("h1");
+    header.textContent = "The Rock, Paper, Scissors";
+    hero.appendChild(header);
+
+    const intro = document.createElement("p");
+    intro.textContent = "Intro text here...";
+    hero.appendChild(intro);
+
+    container.appendChild(hero);
+
+    const playerText = document.createElement("h2");
+    playerText.textContent = "Make your selection"
+    container.appendChild(playerText);
 }
 
 function createResultsDiv() {
