@@ -26,6 +26,9 @@ function getRandomNumber() {
 
 function playRound(e) {
     round++;
+
+    e.target.classList.add("button-clicked");
+
     const playerSelection = e.target.value;
     const computerSelection = getComputerChoice();
     const resultText = document.createElement("p");
@@ -59,6 +62,10 @@ function playRound(e) {
         results.appendChild(win);
         disableButtons();
     }
+
+    setTimeout(() => {
+        e.target.classList.remove("button-clicked");
+      }, 100);
 }
 
 function disableButtons() {
@@ -85,17 +92,17 @@ function createButtons() {
     btnContainer.setAttribute("id", "btn-container");
 
     const rockBtn = document.createElement("button");
-    rockBtn.textContent = "Rock";
+    // rockBtn.textContent = "Rock";
     rockBtn.value = "rock";
     rockBtn.setAttribute("id", "btn-rock");
 
     const paperBtn = document.createElement("button");
-    paperBtn.textContent = "Paper";
+    // paperBtn.textContent = "Paper";
     paperBtn.value = "paper";
     paperBtn.setAttribute("id", "btn-paper");
 
     const scissorsBtn = document.createElement("button");
-    scissorsBtn.textContent = "Scissors";
+    // scissorsBtn.textContent = "Scissors";
     scissorsBtn.value = "scissors";
     scissorsBtn.setAttribute("id", "btn-scissors");
 

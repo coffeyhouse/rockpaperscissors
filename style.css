@@ -1,17 +1,48 @@
 button {
-    border: 1px solid black;
-    padding: 24px;
+    border: none;
     width: 200px;
     height: 200px;
-    flex-grow: 1;
+    background-repeat: no-repeat;
+    background-size: auto 70%;
+    background-position: 50%;
+    border-radius: 24px;
+    cursor: pointer;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0px 0px black;
+    transition: box-shadow 0.1s;
+    background-color: rgba(0,0,0,0.03);
+}
+
+button:disabled {
+    opacity: 30%;
+    cursor: not-allowed;
 }
 
 #btn-container {
     display: flex;
-    gap: 8px;
+    gap: 24px;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 #container {
     padding: 24px;
+}
+
+#btn-paper {
+    background-image: url(images/paper.png);
+}
+
+#btn-rock {
+    background-image: url(images/rock.png);
+}
+
+#btn-scissors {
+    background-image: url(images/scissors.png);
+}
+
+.button-clicked {
+    box-shadow: 2px 2px 0px 0px black;
+    background-color: white;
 }
